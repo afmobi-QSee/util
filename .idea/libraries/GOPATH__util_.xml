@@ -1,0 +1,46 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;util&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../captcha" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../HttpServerAuth" />
+      <root url="file://$PROJECT_DIR$/../test" />
+      <root url="file://$PROJECT_DIR$/../HttpServer" />
+      <root url="file://$PROJECT_DIR$/../HttpServerUpload" />
+      <root url="file://$PROJECT_DIR$/../sms" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$PROJECT_DIR$/../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../nginx" />
+      <root url="file://$PROJECT_DIR$/../statlog" />
+      <root url="file://$PROJECT_DIR$/../prize-html" />
+      <root url="file://$PROJECT_DIR$/../consulConfig" />
+      <root url="file://$PROJECT_DIR$/../friend" />
+      <root url="file://$PROJECT_DIR$/../consul" />
+      <root url="file://$PROJECT_DIR$/../soap-demo" />
+      <root url="file://$PROJECT_DIR$/../geonear" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../captcha" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../HttpServerAuth" />
+      <root url="file://$PROJECT_DIR$/../test" />
+      <root url="file://$PROJECT_DIR$/../HttpServer" />
+      <root url="file://$PROJECT_DIR$/../HttpServerUpload" />
+      <root url="file://$PROJECT_DIR$/../sms" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
+      <root url="file://$PROJECT_DIR$/../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../nginx" />
+      <root url="file://$PROJECT_DIR$/../statlog" />
+      <root url="file://$PROJECT_DIR$/../prize-html" />
+      <root url="file://$PROJECT_DIR$/../consulConfig" />
+      <root url="file://$PROJECT_DIR$/../friend" />
+      <root url="file://$PROJECT_DIR$/../consul" />
+      <root url="file://$PROJECT_DIR$/../soap-demo" />
+      <root url="file://$PROJECT_DIR$/../geonear" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
