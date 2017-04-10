@@ -11,7 +11,7 @@ import (
 
 /**
 	校验参数方法ValidParams
-	列子如下：
+        例子如下：
 type TestStruct struct {
 	A  string `NotNull:"true"`
 	B  string `Min:"5"`
