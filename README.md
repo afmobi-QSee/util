@@ -1,3 +1,4 @@
+#校验参数valid.go
 校验参数方法ValidParams
 例子如下：
 
