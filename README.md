@@ -1,3 +1,5 @@
+go get -u github.com/afmobi-QSee/valid
+
 # 校验参数valid.go
 
 校验参数方法ValidParams
