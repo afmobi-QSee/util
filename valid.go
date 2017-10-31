@@ -23,6 +23,7 @@ type TestStruct struct {
 	F  string `Pattern:"abc|def"`
 	F1 string `Pattern:"[\u4e00-\u9fa5]"`
 	H  *TestStruct1 `InStruct:"true"`
+	G []TestStruct1 `InStructArray:"true"`
 }
 
 type TestStruct1 struct {
@@ -36,6 +37,8 @@ type TestStruct1 struct {
 	SizeMin,SizeMax 字符长度不大于或不小于某个值,只支持string, 后面的值为其限定范围
 	Pattern   用正则表达式匹配参数值,支持string,int类型,后面的值为校验的正则表达式
 	InStruct  表示该参数为嵌套的struct,且需要校验里面的值,true为需要校验,其他值不用校验
+	InStructArray 表示该参数为嵌套的struct slice 或 array,且需要校验里面的值,true为需要校验,其他值不用校验
+
 
 如果校验全部通过后返回结果是字符"ok"
 其他值为校验不通过，会返回相应的字段的错误，可直接作为错误返回
