@@ -16,7 +16,8 @@ type TestStruct struct {
 	E  string `SizeMin:"5" SizeMax:"10"`
 	F  string `Pattern:"abc|def"`
 	F1 string `Pattern:"[\u4e00-\u9fa5]"`
-	H  *TestStruct1 `InStruct:"true"`
+	H  TestStruct1 `InStruct:"true"`
+	G []TestStruct1 `InStructArray:"true"`
 }
 
 type TestStruct1 struct {
@@ -32,8 +33,10 @@ type TestStruct1 struct {
 //}
 
 func newTestStruct() *TestStruct {
-	wt := &TestStruct1{I:"test", J:9}
-	return &TestStruct{A:"test", B:"10", B1:6, B2:5.1, C:7, D:"123456", E:"1234567", F:"abc", F1:"你好", H:wt}
+	wt := TestStruct1{I:"test", J:9}
+	wt1 := TestStruct1{I:"xxxx", J:6}
+	w := []TestStruct1{wt, wt1}
+	return &TestStruct{H:wt,G:w}
 }
 
 func TestValidParams(t *testing.T) {

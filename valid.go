@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"strconv"
 	"github.com/kataras/go-errors"
-	"regexp"
 	"fmt"
+	"regexp"
 )
 
 /**
@@ -48,14 +48,11 @@ const (
 func ValidParams(p interface{}) string {
 	v := ValidOk
 	f := reflect.ValueOf(p)
-	if f.MethodByName("Customization").Kind() == reflect.Invalid{
-		fe := reflect.ValueOf(p).Elem()
-		typeOfF := fe.Type()
-		for i := 0; i < fe.NumField(); i++ {
-			v := validSingleParam(typeOfF.Field(i), fe.Field(i).Interface())
-			if v != ValidOk {
-				return v
-			}
+	if f.MethodByName("Customization").Kind() == reflect.Invalid {
+		switch f.Kind() {
+		case reflect.Ptr: v = validField(f.Elem())
+		case reflect.Struct: v = validField(f)
+		default:v = "not support type"
 		}
 	}else {
 		v1 := f.MethodByName("Customization").Call(nil)
@@ -64,8 +61,28 @@ func ValidParams(p interface{}) string {
 	return v
 }
 
+func validField(f reflect.Value) string {
+	typeOfF := f.Type()
+	for i := 0; i < f.NumField(); i++ {
+		v := validSingleParam(typeOfF.Field(i), f.Field(i).Interface())
+		if v != ValidOk {
+			return v
+		}
+	}
+	return ValidOk
+}
+
 func validSingleParam(f reflect.StructField, v interface{}) string {
 	t := f.Tag
+	if t.Get("InStructArray") == "true" {
+		value := reflect.ValueOf(v)
+		for i := 0; i <= value.Len()-1; i++{
+			result := validField(value.Index(i))
+			if result != "ok"{
+				return result
+			}
+		}
+	}
 	if t.Get("InStruct") == "true" {
 		result := ValidParams(v)
 		if result != "ok" {
