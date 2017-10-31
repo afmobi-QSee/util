@@ -79,6 +79,9 @@ func validSingleParam(f reflect.StructField, v interface{}) string {
 	t := f.Tag
 	if t.Get("InStructArray") == "true" {
 		value := reflect.ValueOf(v)
+		if value.Len() == 0{
+			return f.Name + " is null"
+		}
 		for i := 0; i <= value.Len()-1; i++{
 			result := validField(value.Index(i))
 			if result != "ok"{
